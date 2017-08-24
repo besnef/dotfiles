@@ -101,3 +101,6 @@ endif
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='ubaryd'
+
+" Reduce delay on escape
+set timeoutlen=1000 ttimeoutlen=5
