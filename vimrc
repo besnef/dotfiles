@@ -50,6 +50,9 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'cosminadrianpopescu/vim-sql-workbench'
 Plugin 'tpope/vim-dispatch'
 Plugin 'dbext.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'edkolev/tmuxline.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -91,3 +94,10 @@ set hidden
 " Hosted 110 Server (Microsoft SQL Server)
 " let g:dbext_mssqlserver_logicshosted_110 =
 " 'type=SQLSRV:user=sa:passwd=!L0gICsprinter!30:srvname=74.213.157.110:dbname=Bladenboro_Logics'
+"
+if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
+  set t_Co=256
+endif
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme='ubaryd'
