@@ -50,6 +50,8 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'cosminadrianpopescu/vim-sql-workbench'
 Plugin 'tpope/vim-dispatch'
 Plugin 'dbext.vim'
+"Plugin 'omnisharp/omnisharp-vim'
+Plugin 'tpope/vim-commentary'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
@@ -75,15 +77,32 @@ filetype plugin indent on    " required
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
+" Set font with powerline symbols patched
+set guifont=Sauce_Code_Powerline:h9:cANSI
+
 " Switch syntax highlighting on
 syntax on
 syntax enable		"What's the difference between 'on' and 'enable'?
+set background=dark
+if has('gui_running')
+	" GUI colors
+	colorscheme solarized
+else
+	" Terminal colors
+endif
 
+" Use a blinking upright bar cursor in Insert mode, a blinking block in normal
+"if &term == 'xterm-256color' || &term == 'screen-256color'
+    let &t_ti.="\e[1 q"
+    let &t_SI.="\e[5 q"
+    let &t_EI.="\e[1 q"
+    let &t_te.="\e[0 q"
+"endif
 
-"set background=dark
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=16
-"colorscheme solarized
+if exists('$TMUX')
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+endif
 
 " Show line numbers
 set number
@@ -91,19 +110,20 @@ set number
 " Allow hidden buffers, don't limit to 1 file per window/split
 set hidden
 
-" Hosted 110 Server (Microsoft SQL Server)
-" let g:dbext_mssqlserver_logicshosted_110 =
-" 'type=SQLSRV:user=sa:passwd=!L0gICsprinter!30:srvname=74.213.157.110:dbname=Bladenboro_Logics'
-"
-if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
-  set t_Co=256
-endif
+" When searching ignore case unless the search string contains uppercase
+" letters
+set ignorecase
+set smartcase
 
+" airline configuration
+let g:airline_theme='distinguished'
 let g:airline_powerline_fonts = 1
-let g:airline_theme='ubaryd'
 
-" Reduce delay on escape
-set timeoutlen=1000 ttimeoutlen=5
+" Hosted 110 Server (Microsoft SQL Server)
+let g:dbext_default_profile_hosted110 = 'type=SQLSRV:user=sa:passwd=!L0gICsprinter!30:srvname=74.213.157.110:dbname=Bladenboro_Logics:bin_path=C:\Program Files\Microsoft SQL Server\120\Tools\Binn'
+let g:dbext_default_profile_blackheart14 = 'type=SQLSRV:user=sa:passwd=logics:srvname=blackheart\MSSQLServer14:dbname=DorchesterTest_Logics'
 
-" Use :w!! to save file as sudo when not opened as sudo
-cmap w!! s !sudo tee > /dev/null %
+" Aliases
+"command Bd bp\|bd \#
+
+
