@@ -80,10 +80,10 @@ syntax on
 syntax enable		"What's the difference between 'on' and 'enable'?
 
 
-set background=dark
-let g:solarized_termtrans=1
-let g:solarized_termcolors=16
-colorscheme solarized
+"set background=dark
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=16
+"colorscheme solarized
 
 " Show line numbers
 set number
