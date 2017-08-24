@@ -104,3 +104,6 @@ let g:airline_theme='ubaryd'
 
 " Reduce delay on escape
 set timeoutlen=1000 ttimeoutlen=5
+
+" Use :w!! to save file as sudo when not opened as sudo
+cmap w!! s !sudo tee > /dev/null %
