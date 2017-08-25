@@ -51,7 +51,6 @@
 	trustctime = false
 	editor = vim
 	filemode = false
-	autocrlf = true
 [grep]
 	extendRegexp = true
 [push]
