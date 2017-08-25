@@ -78,15 +78,15 @@ filetype plugin indent on    " required
 set backspace=indent,eol,start
 
 " Set font with powerline symbols patched
-set guifont=Sauce_Code_Powerline:h9:cANSI
+"set guifont=Sauce_Code_Powerline:h9:cANSI
 
 " Switch syntax highlighting on
 syntax on
 syntax enable		"What's the difference between 'on' and 'enable'?
-set background=dark
+"set background=dark
 if has('gui_running')
 	" GUI colors
-	colorscheme solarized
+"	colorscheme solarized
 else
 	" Terminal colors
 endif
@@ -114,6 +114,10 @@ set hidden
 " letters
 set ignorecase
 set smartcase
+
+if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
+  set t_Co=256
+endif
 
 " airline configuration
 let g:airline_theme='distinguished'
