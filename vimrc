@@ -83,9 +83,9 @@ set guifont=Sauce_Code_Powerline:h9:cANSI
 " Switch syntax highlighting on
 syntax on
 syntax enable		"What's the difference between 'on' and 'enable'?
-set background=dark
 if has('gui_running')
 	" GUI colors
+	set background=dark
 	colorscheme solarized
 else
 	" Terminal colors
