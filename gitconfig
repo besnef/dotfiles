@@ -1,0 +1,66 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+#	name = Catherine Brady
+#	email = cbrady@logicssolutions.com
+[user]
+	name = Catherine Brady
+	email = cbrady@logicssolutions.com
+[merge]
+	tool = meld
+	conflictstyle = diff3
+[mergetool "meld"]
+	path = C:\\Program Files (x86)\\Meld\\Meld.exe	
+[alias]
+	mff = merge --ff-only
+	co = checkout
+	bdel = branch -d
+	branches = !sh branch-descriptions.sh
+	setdesc = branch --edit-description
+	addpat = "!f() { git diff-files --name-only | grep $1 | xargs git add; }; f"
+	lld = log --pretty=format:"%C(red)%h\\ %C(yellow)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --numstat
+	# from http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	le = log --oneline --decorate
+	filelog = log -u
+	fl = log -u
+	dl = "!git ll -1"
+	dlc = diff --cached HEAD^
+	dr  = "!f() { git diff "$1"^.."$1"; }; f"
+	lc  = "!f() { git ll "$1"^.."$1"; }; f"
+	diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+	la = "!git config -l | grep alias | cut -c 7-"
+	last = log -1 --stat
+	cp = cherry-pick
+	cl = clone
+	ci = commit
+	st = status -sb
+	unstage = reset HEAD --
+	dc = diff --cached
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+	rm-deleted = !git rm $(git ls-files --deleted)
+	
+	
+[core]
+	#editor = 'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
+	excludesfile = C:/Users/catherine/.gitignore_global
+	trustctime = false
+	editor = vim
+	filemode = false
+[grep]
+	extendRegexp = true
+[push]
+	default = matching
+[color]
+	ui = true
+[credential]
+	helper = cache --timeout=3600
+[mergetool]
+	keeptemporaries = false
+	keepbackups = false
+	prompt = false
+	trustexitcode = false
