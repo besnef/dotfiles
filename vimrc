@@ -93,10 +93,10 @@ endif
 
 " Use a blinking upright bar cursor in Insert mode, a blinking block in normal
 "if &term == 'xterm-256color' || &term == 'screen-256color'
-    let &t_ti.="\e[1 q"
-    let &t_SI.="\e[5 q"
-    let &t_EI.="\e[1 q"
-    let &t_te.="\e[0 q"
+    "let &t_ti.="\e[1 q"
+    "let &t_SI.="\e[5 q"
+    "let &t_EI.="\e[1 q"
+    "let &t_te.="\e[0 q"
 "endif
 
 if exists('$TMUX')
