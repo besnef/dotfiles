@@ -47,7 +47,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'cosminadrianpopescu/vim-sql-workbench'
+"Plugin 'cosminadrianpopescu/vim-sql-workbench'
 Plugin 'tpope/vim-dispatch'
 Plugin 'dbext.vim'
 "Plugin 'omnisharp/omnisharp-vim'
@@ -78,7 +78,7 @@ filetype plugin indent on    " required
 set backspace=indent,eol,start
 
 " Set font with powerline symbols patched
-set guifont=Sauce_Code_Powerline:h9:cANSI
+"set guifont=Sauce_Code_Powerline:h9:cANSI
 
 " Switch syntax highlighting on
 syntax on
@@ -99,10 +99,10 @@ endif
     let &t_te.="\e[0 q"
 "endif
 
-if exists('$TMUX')
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-endif
+"if exists('$TMUX')
+"    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+"    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+"endif
 
 " Show line numbers
 set number
@@ -118,12 +118,13 @@ set smartcase
 " airline configuration
 let g:airline_theme='distinguished'
 let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tmuxline#enabled = 0
 
 " Hosted 110 Server (Microsoft SQL Server)
-let g:dbext_default_profile_hosted110 = 'type=SQLSRV:user=sa:passwd=!L0gICsprinter!30:srvname=74.213.157.110:dbname=Bladenboro_Logics:bin_path=C:\Program Files\Microsoft SQL Server\120\Tools\Binn'
-let g:dbext_default_profile_blackheart14 = 'type=SQLSRV:user=sa:passwd=logics:srvname=blackheart\MSSQLServer14:dbname=DorchesterTest_Logics'
+"let g:dbext_default_profile_hosted110 = 'type=SQLSRV:user=sa:passwd=!L0gICsprinter!30:srvname=74.213.157.110:dbname=Bladenboro_Logics:bin_path=C:\Program Files\Microsoft SQL Server\120\Tools\Binn'
+"let g:dbext_default_profile_blackheart14 = 'type=SQLSRV:user=sa:passwd=logics:srvname=blackheart\MSSQLServer14:dbname=DorchesterTest_Logics'
 
 " Aliases
 "command Bd bp\|bd \#
 
-
+let $MYVIMRC='~/Documents/bin/dotfiles/vimrc'
