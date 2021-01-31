@@ -4,11 +4,13 @@
 #	name = Catherine Brady
 #	email = cbrady@logicssolutions.com
 [user]
-	name = besnef
-	email = besnef@gmail.com
+	name = Catherine Brady
+	email = cbrady@logicssolutions.com
 [merge]
 	tool = meld
 	conflictstyle = diff3
+[mergetool "meld"]
+	path = C:\\Program Files (x86)\\Meld\\Meld.exe	
 [alias]
 	mff = merge --ff-only
 	co = checkout
