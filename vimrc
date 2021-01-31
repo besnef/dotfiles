@@ -47,7 +47,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'cosminadrianpopescu/vim-sql-workbench'
+"Plugin 'cosminadrianpopescu/vim-sql-workbench'
 Plugin 'tpope/vim-dispatch'
 Plugin 'dbext.vim'
 "Plugin 'omnisharp/omnisharp-vim'
@@ -130,4 +130,12 @@ let g:dbext_default_profile_blackheart14 = 'type=SQLSRV:user=sa:passwd=logics:sr
 " Aliases
 "command Bd bp\|bd \#
 
+" tab/space settings
+" Default
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+
+" yml
+autocmd Filetype yaml setlocal ts=2 sw=2 sts=2 expandtab
 
