@@ -11,4 +11,3 @@
     ~/.tmuxline.conf: tmuxline.conf
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
-    ~/.gitconfig: gitconfig
